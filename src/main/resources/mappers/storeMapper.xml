@@ -4,7 +4,7 @@
  
  <mapper namespace="com.bsoupb.test.database.repository.StoreRepository">
  	
- 	<select id="selectStoreList" resultType="com.bsoupb.test.database.domain.Store">
+ 	<select id="selectStoreList" resultType="com.bsoupb.test.database.domain.Store"> <!-- 메소드 이름, 파라미터, 리턴 타입 : 한 행을 저장하기 위한 (entity class)타입 -->
  			SELECT 
 			`id`
 			, `name`
