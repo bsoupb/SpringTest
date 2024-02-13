@@ -19,9 +19,15 @@ public class SellerService {
 		
 	}
 	
-	public Seller getLastSeller(Integer id) {
+	public Seller getLastSeller() {
+	
+		Seller seller = sellerRepository.selectLastSeller();
+		return seller;
+	}
+	
+	public Seller getSeller(Integer id) {
 		
-		Seller seller = sellerRepository.selectLastSeller(id);
+		Seller seller = sellerRepository.selectSeller(id);
 		return seller;
 	}
 	

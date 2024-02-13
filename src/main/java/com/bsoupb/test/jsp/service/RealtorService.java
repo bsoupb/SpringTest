@@ -3,6 +3,7 @@ package com.bsoupb.test.jsp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bsoupb.test.jsp.domain.Realtor;
 import com.bsoupb.test.jsp.repository.RealtorRepository;
 
 @Service
@@ -16,4 +17,8 @@ public class RealtorService {
 		return count;
 	}
 	
+	public int addRealtorByObject(Realtor realtor) {
+		int count = realtorRepository.insertRealtorByObject(realtor);
+		return count;
+	}
 }

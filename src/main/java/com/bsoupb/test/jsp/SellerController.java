@@ -37,13 +37,21 @@ public class SellerController {
 	}
 	
 	@GetMapping("/info")
-	public String infoSeller(@RequestParam(required=false, value="id") Integer id, Model model) {
+	public String infoSeller(@RequestParam(required=false, value="id") Integer id, Model model) { // required : 파라미터가 전달될 수 도 있고 아닐 수도 있고
 		
-		Seller seller = sellerService.getLastSeller(id);
+		// id가 전달되면 일치하는 판매자 정보
+		Seller seller = null;
+		if(id != null) {
+			seller = sellerService.getSeller(id);
 			
-		model.addAttribute("result", seller);
-		model.addAttribute("title", "판매자 정보");
+		} else { // id가 전달되지 않으면 가장 최근 등록된 판매자 정보
+			seller = sellerService.getLastSeller();
+
+		}
 		
+		model.addAttribute("seller", seller);
+		model.addAttribute("title", "판매자 정보");
+					
 		return "/jsp/sellerInfo";
 	}
 	

@@ -22,4 +22,23 @@
 			, #{grade}
 		)
 	</insert>
+	
+	<insert id="insertRealtorByObject" parameterType="com.bsoupb.test.jsp.domain.Realtor"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			`realtor`
+		(	
+			 `office`
+			,`phoneNumber`
+			, `address`
+			, `grade`
+		)
+		VALUE
+		(
+			 #{office}
+			, #{phoneNumber}
+			, #{address}
+			, #{grade}
+		)
+	</insert>
 </mapper>

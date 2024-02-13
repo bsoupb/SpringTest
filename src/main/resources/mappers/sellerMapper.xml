@@ -31,10 +31,22 @@
  			, `updatedAt`
  		FROM
  			`seller`
- 		WHERE
- 			`id` = #{id}
  		ORDER BY 
  			`id` DESC
  		LIMIT 1
+ 	</select>
+ 	
+ 	<select id="selectSeller" resultType="com.bsoupb.test.jsp.domain.Seller">
+ 		SELECT 
+ 			`id`
+ 			, `nickname`
+ 			, `temperature`
+ 			, `profileImage`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`seller`
+ 		WHERE
+ 			`id` = #{id}
  	</select>
  </mapper>
