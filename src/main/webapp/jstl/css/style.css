@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+#wrap{
+	width:1200px;
+	margin:auto;
+}
+
+.menu{
+	width:200px;
+}
+
+.content{
+	width:1000px;
+}
+
+.logo{
+	width:200px;
+}
+
+.copyright{
+	width:1000px;
+}
+footer{
+	height:100px;
+}
+
+.img-responsive{
+	
+	width:100%;
+	height:auto;
+}
+
+.img-responsive2{
+	
+	width:70%;
+	height:auto;
+}
+
+.nav-bg{
+	background-color:#6699FF;
+}
+
+.nav-font{
+	color:white;
+	font-size:20px;
+	font-weight:bold;
+}
