@@ -215,7 +215,7 @@ public class JSTLController {
 //	@GetMapping("weather/input")
 //	@ResponseBody
 //	public String createWeather(
-//			@RequestParam("date") String date, @RequestParam("weather") String weather, @RequestParam("temperatures") double temperatures, @RequestParam("precipitation") double precipitation, @RequestParam("microDust") String microDust, @RequestParam("windSpeed") double windSpeed) {
+//			@RequestParam("date") Date date, @RequestParam("weather") String weather, @RequestParam("temperatures") double temperatures, @RequestParam("precipitation") double precipitation, @RequestParam("microDust") String microDust, @RequestParam("windSpeed") double windSpeed) {
 //		
 //		int count = weatherService.addWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
 //		return "실행 결과 " + count;

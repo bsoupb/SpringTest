@@ -14,7 +14,7 @@ public interface WeatherRepository {
 	public List<Weather> selectWeather();
 	
 	public int insertWeather(
-			@Param("date") String date
+			@Param("date") Date date
 			, @Param("weather") String weather
 			, @Param("temperatures") double temperatures
 			, @Param("precipitation") double precipitation

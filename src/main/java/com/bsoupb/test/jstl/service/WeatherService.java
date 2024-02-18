@@ -22,7 +22,7 @@ public class WeatherService {
 		
 	}
 	
-	public int addWeather(String date, String weather, double temperatures, double precipitation, String microDust, double windSpeed) {
+	public int addWeather(Date date, String weather, double temperatures, double precipitation, String microDust, double windSpeed) {
 		
 		int count = weatherRepository.insertWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
 		return count;
