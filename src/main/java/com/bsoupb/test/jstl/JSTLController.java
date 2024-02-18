@@ -1,15 +1,19 @@
 package com.bsoupb.test.jstl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bsoupb.test.jstl.domain.Member;
 import com.bsoupb.test.jstl.domain.Weather;
@@ -201,5 +205,20 @@ public class JSTLController {
 		
 		return weather;
 	}
+	
+	@GetMapping("weather/input")
+	public String weatherInput() {
+		return "/jstl/weather/input";
+	}
+	
+	
+//	@GetMapping("weather/input")
+//	@ResponseBody
+//	public String createWeather(
+//			@RequestParam("date") String date, @RequestParam("weather") String weather, @RequestParam("temperatures") double temperatures, @RequestParam("precipitation") double precipitation, @RequestParam("microDust") String microDust, @RequestParam("windSpeed") double windSpeed) {
+//		
+//		int count = weatherService.addWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
+//		return "실행 결과 " + count;
+//	}
 	
 }

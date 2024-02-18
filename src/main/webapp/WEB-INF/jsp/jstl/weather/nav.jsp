@@ -7,7 +7,7 @@
 				<div class="pt-3">
 					<ul class="nav flex-column">
 						<li class="nav-item"><a href="#" class="nav-link nav-font">날씨</a></li>
-						<li class="nav-item"><a href="#" class="nav-link nav-font">날씨입력</a></li>
+						<li class="nav-item"><a href="/jstl/weather/input.jsp" class="nav-link nav-font">날씨입력</a></li>
 						<li class="nav-item"><a href="#" class="nav-link nav-font">테마날씨</a></li>
 						<li class="nav-item"><a href="#" class="nav-link nav-font">관측 기후</a></li>
 					</ul>

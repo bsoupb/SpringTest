@@ -1,5 +1,6 @@
 package com.bsoupb.test.jstl.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,13 @@ public class WeatherService {
 		
 		List<Weather> weather = weatherRepository.selectWeather();
 		return weather;
+		
+	}
+	
+	public int addWeather(String date, String weather, double temperatures, double precipitation, String microDust, double windSpeed) {
+		
+		int count = weatherRepository.insertWeather(date, weather, temperatures, precipitation, microDust, windSpeed);
+		return count;
 		
 	}
 	

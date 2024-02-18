@@ -4,17 +4,18 @@ import java.util.Date;
 
 public class Weather {
 	
-	private Date date;
+	private String date;
 	private String weather;
 	private double temperatures;
 	private double precipitation;
 	private String microDust;
 	private double windSpeed;
 	
-	public Date getDate() {
+	
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getWeather() {
@@ -47,6 +48,8 @@ public class Weather {
 	public void setWindSpeed(double windSpeed) {
 		this.windSpeed = windSpeed;
 	}
+	
+	
 
 	
 }
