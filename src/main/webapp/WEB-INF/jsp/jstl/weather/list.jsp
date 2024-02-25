@@ -48,6 +48,9 @@
 												<c:when test="${weather.weather eq '비' }" >
 													<img src="${weatherImage[3] }">
 												</c:when>
+												<c:otherwise>
+													${weather.weather }
+												</c:otherwise>
 											</c:choose>
 										</td>
 										<td>${weather.temperatures }℃</td>

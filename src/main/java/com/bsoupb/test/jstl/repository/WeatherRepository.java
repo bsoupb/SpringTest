@@ -22,4 +22,6 @@ public interface WeatherRepository {
 			, @Param("windSpeed") double windSpeed
 	);
 	
+	public int insertWeatherByObject(Weather weather); 
+	
 }

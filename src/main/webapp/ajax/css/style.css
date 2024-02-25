@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+#wrap {
+    width:1200px;
+    margin:0 auto;
+}
+
+header {
+    height:100px;
+}
+
+.menu-content {
+    height:50px;
+}
+
+.menu-color {
+    background-color:chocolate;
+}
+
+li:hover {
+    background-color:rgb(180, 96, 12);
+    color:white;
+}
+
+.main-content > .reserved-content {
+    width:400px;
+    background-color:rgb(208, 128, 31);
+}
+
+.main-content > .confirm-content {
+    width:500px;
+    background-color:sienna;
+}
+
+.main-content > .tel-content {
+    width:300px;
+    background-color:rgb(181, 114, 52);
+}
+
+footer {
+    height:100px;
+}
+
+.font-color {
+    color:white;
+}
+
+.img-responsive {
+    max-height:100%;
+    width:100%;
+    display:block;
+}
+
+.xx-large-font {
+    font-size:xx-large;
+}
+
+.large-font {
+    font-size:23px;
+}

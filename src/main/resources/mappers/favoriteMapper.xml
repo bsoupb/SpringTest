@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bsoupb.test.ajax.repository.FavoriteRepository">
+	<select id="selectFavorite" resultType="com.bsoupb.test.ajax.domain.Favorite">
+		SELECT 
+			`id`
+			, `name`
+			, `url`
+			, `createdAt`
+			, `updatedAt`
+		FROM 
+			`homepage`
+	</select>
+	
+	<insert id="insertFavorite" parameterType="map">
+		INSERT INTO
+			`homepage`
+		(
+			`name`
+			, `url`
+		)
+		VALUE
+		(
+			#{name}
+			, #{url}
+		)
+	</insert>
+	
+	<select id="selectCountUrl" parameterType="string" resultType="int">
+		SELECT
+			count(*)
+		FROM 
+			`homepage`
+		WHERE
+			`url` = #{url}
+	</select>
+	
+	<delete id="deleteUrl" parameterType="int">
+		DELETE FROM
+			`homepage`
+		WHERE
+			`id` = #{id}
+	</delete>
+</mapper>

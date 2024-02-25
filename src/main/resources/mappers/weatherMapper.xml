@@ -39,4 +39,27 @@
  			, #{windSpeed}
  		)
  	</insert>
+ 	
+ 	<insert id="insertWeatherByObject" 
+ 	parameterType="com.bsoupb.test.jstl.domain.Weather">
+ 		INSERT INTO
+ 			`weatherhistory`
+ 		(
+ 			`date`
+ 			, `weather`
+ 			, `temperatures`
+ 			, `precipitation`
+ 			, `microDust`
+ 			, `windSpeed`
+ 		)
+ 		VALUE
+ 		(
+ 			#{date}
+ 			, #{weather}
+ 			, #{temperatures}
+ 			, #{precipitation}
+ 			, #{microDust}
+ 			, #{windSpeed}
+ 		)
+ 	</insert>
  </mapper>

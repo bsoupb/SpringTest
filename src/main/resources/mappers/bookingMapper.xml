@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bsoupb.test.ajax.repository.BookingRepository">
+	<select id="selectBooking" resultType="com.bsoupb.test.ajax.domain.Booking">
+		SELECT
+			`id`
+			, `name`
+			, `headcount`
+			, `day`
+			, `date`
+			, `phoneNumber`
+			, `state`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`booking`
+	</select>
+	
+	<insert id="insertBooking" parameterType="map">
+		INSERT INTO
+			`booking`
+		(
+			`name`
+			, `date`
+			, `day`
+			, `headcount`
+			, `phoneNumber`
+		)
+		VALUE
+		(
+			#{name}
+			, #{date}
+			, #{day}
+			, #{headcount}
+			, #{phoneNumber}
+		)
+	</insert>
+	
+	<delete id="deleteBooking" parameterType="int">
+		DELETE FROM
+			`booking`
+		WHERE
+			`id` = #{id}
+	</delete>
+	
+	<select id="searchBooking" resultType="com.bsoupb.test.ajax.domain.Booking">
+		SELECT
+			`id`
+			, `name`
+			, `headcount`
+			, `day`
+			, `date`
+			, `phoneNumber`
+			, `state`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`booking`
+		WHERE
+			`name` = #{name} AND `phoneNumber` = #{phoneNumber}
+	</select>
+</mapper>
