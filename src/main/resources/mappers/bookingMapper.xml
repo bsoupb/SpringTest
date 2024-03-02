@@ -27,6 +27,7 @@
 			, `day`
 			, `headcount`
 			, `phoneNumber`
+			, 'state'
 		)
 		VALUE
 		(
@@ -35,6 +36,7 @@
 			, #{day}
 			, #{headcount}
 			, #{phoneNumber}
+			, #{state}
 		)
 	</insert>
 	
@@ -45,7 +47,7 @@
 			`id` = #{id}
 	</delete>
 	
-	<select id="searchBooking" resultType="com.bsoupb.test.ajax.domain.Booking">
+	<select id="searchBooking" parameterType="map" resultType="com.bsoupb.test.ajax.domain.Booking">
 		SELECT
 			`id`
 			, `name`

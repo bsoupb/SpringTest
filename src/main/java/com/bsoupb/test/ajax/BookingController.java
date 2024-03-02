@@ -82,14 +82,33 @@ public class BookingController {
 		
 		return resultMap;
 	}
+
+	// 이름과 전화번호를 전달 받고, 일치하는 예약 정보를 돌려주는 API
 	
 	@GetMapping("/search")
 	@ResponseBody
-	public Booking searchBooking(@RequestParam("name") String name, @RequestParam("phoneNumber") String phoneNumber, Model model) {
+	public Map<String, Object> searchBooking(@RequestParam("name") String name, @RequestParam("phoneNumber") String phoneNumber) {
+		
 		Booking booking = bookingService.searchBooking(name, phoneNumber);
-		model.addAttribute("bookingList", booking);
-		return booking;
+		
+		// 조회 결과가 있는지 없는지를 명확히 구분 해서 response를 구성
+		// 조회 성공 실패 여부를 response에 추가
+		// 조회 성공시 : {"result":"success", "booking":{"name":"혜리", ...}}
+		// 조회 실패시 : {"result":"fail"}
+		
+		Map<String, Object> resultMap = new HashMap<>();
+		
+		if(booking!= null) {
+			// 조회 성공
+			resultMap.put("result", "success");
+			resultMap.put("booking", booking);
+		} else {
+			// 조회 실패
+			resultMap.put("result", "fail");
+		}
+			
+		
+		return resultMap;
 	}
-	
 	
 }

@@ -22,7 +22,7 @@ public class BookingService {
 	}
 	
 	public int insertBooking(String name, Date date, int day, int headcount, String phoneNumber) {
-		int count = bookingRepository.insertBooking(name, date, day, headcount, phoneNumber);
+		int count = bookingRepository.insertBooking(name, date, day, headcount, phoneNumber, "대기중");
 		return count;
 	}
 	

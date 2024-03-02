@@ -136,7 +136,26 @@
                             return;
                         }
                         
-                        if(!())
+                        $.ajax({
+                        	type:"get"
+                        	, url:"/ajax/booking/search"
+                        	, data:{"name":name, "phoneNumber":tel}
+                        	, success:function(data){
+                        		
+                        		if(data.result == "fail"){
+                        			alert("조회 결과가 없습니다");
+                        		} else{
+	                        		alert("이름 : " + data.booking.name 
+	                        				+ "\n날짜 : " + data.booking.date
+	                        				+ "\n일수 : " + data.booking.day
+	                        				+ "\n인원 : " + data.booking.headcount
+	                        				+ "\n상태 : " + data.booking.state);
+                        		}
+                        	}
+                        	, error:function(){
+                        		alert("에러");
+                        	}
+                        });
 
                    }
 

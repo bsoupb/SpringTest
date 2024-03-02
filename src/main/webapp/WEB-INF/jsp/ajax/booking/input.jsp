@@ -56,7 +56,7 @@
 				}
 				
 				if(date == ""){
-					alert("예약날짜를 입력해 주세요");
+					alert("예약날짜를 선택해 주세요");
 					return;
 				}
 				
@@ -65,8 +65,20 @@
 					return;
 				}
 				
+				// day 가 숫자가 아닌 경우
+				// Not a Number
+				if(isNaN(day)){
+					alert("숙박일수는 숫자만 입력 가능합니다");
+					return;
+				}
+				
 				if(headcount == ""){
 					alert("숙박인원을 입력해 주세요");
+					return;
+				}
+				
+				if(isNaN(headcount)){
+					alert("숙박인원은 숫자만 입력 가능합니다");
 					return;
 				}
 				
@@ -98,7 +110,8 @@
 	
 	<script>
 		$("#date").datepicker({
-			dateFormat:"yy년 mm월 dd일",
+			dateFormat:"yy년 m월 d일",
+			minDate:0,
             dayNamesMin:["일", "월", "화", "수", "목", "금", "토"]
 		});
 	

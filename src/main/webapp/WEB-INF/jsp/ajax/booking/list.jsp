@@ -76,6 +76,8 @@
 		$(document).ready(function(){
 			$(".delete-Btn").on("click", function(){
 				
+				// 이벤트가 발생한 버튼의 data-booking-id 값을 얻어 온다
+				
 				let bookingId = $(this).data("booking-id");
 				
 				$.ajax({
